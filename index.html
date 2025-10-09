@@ -457,6 +457,32 @@ body.is-ready #page{
   50%{ transform:scale(1.1); opacity:1 }
 }
 
+/* ===== Scrollbar personalizada ===== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;          /* largura da barra lateral */
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1220;  /* fundo do trilho */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--green), var(--green-600));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(25,227,122,0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--green-600), var(--green));
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) #0d1220;
+}
 
 </style>
 
@@ -670,3 +696,4 @@ body.is-ready #page{
 
 </body>
 </html>
+
