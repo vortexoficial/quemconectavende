@@ -61,10 +61,10 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 900; 
   letter-spacing: 0.5px;
   position: relative;
-  overflow: hidden; /* Importante para o brilho não vazar */
+  overflow: hidden; 
 }
 
-/* O Efeito de Luz */
+/* O Efeito de Luz (Fecho) */
 .cta::after, .promo__cta::after, .cta-final::after, .btn-apply::after {
   content: "";
   position: absolute;
@@ -74,8 +74,8 @@ h1,h2,h3,h4,h5,h6 {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
   transform: skewX(-20deg);
-  filter: blur(5px); /* Desfoque solicitado */
-  animation: shine 3s infinite linear; /* Loop infinito */
+  filter: blur(5px);
+  animation: shine 3s infinite linear;
   pointer-events: none;
 }
 
@@ -146,12 +146,13 @@ h1,h2,h3,h4,h5,h6 {
   margin:12px 0 22px;
   position: relative; z-index: 10;
 }
+/* Preço agora mostra apenas VALOR TOTAL (sem desconto visível) */
 .price-now{
   background:#000;border:1px solid rgba(255,255,255,0.2); color:#fff;
   padding:10px 20px;border-radius:12px;font-weight:800;display:flex;gap:10px;align-items:center;
   font-size: 22px;
 }
-.price-now b{color:#fff; font-size: 26px;} /* Cor branca pois ainda não é o desconto */
+.price-now b{color:#fff; font-size: 26px;} 
 .muted-note{opacity:.9;font-weight:600;letter-spacing:.3px; font-size: 14px;}
 
 .cta-wrap{
@@ -313,7 +314,7 @@ h1,h2,h3,h4,h5,h6 {
 /* ====== FOOTER ====== */
 .footer{ background:#000; color:var(--muted); text-align:center; padding:28px 0 32px; font-size:14px; border-top:1px solid #222; }
 
-/* ====== POPUP MODAL (Fundo translúcido e desfocado) ====== */
+/* ====== POPUP MODAL ====== */
 .modal-overlay {
   position: fixed; inset: 0; 
   background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
@@ -335,7 +336,7 @@ h1,h2,h3,h4,h5,h6 {
 .modal h3 { 
   font-size: 24px; margin-bottom: 15px; 
   color: #fff; font-weight: 700; text-transform: uppercase;
-  text-align: center; /* Centralizado */
+  text-align: center;
 }
 .price-display {
   background: rgba(0,0,0,0.3); padding: 15px; border-radius: 6px;
@@ -421,6 +422,16 @@ h1,h2,h3,h4,h5,h6 {
   .creator .grid{grid-template-columns:1fr;gap:18px}
   .creator .photo{ order:-1; min-height:300px; margin-bottom: 0; box-shadow: none;}
   
+  /* IMAGEM IPHONE FULL WIDTH NO MOBILE */
+  /* Quebra o container e ignora as margens laterais */
+  .benefits .phone {
+    width: calc(100% + 44px); /* 100% do pai + 22px de cada lado (padding do container) */
+    max-width: none;
+    margin-left: -22px; /* Puxa para a esquerda */
+    margin-right: -22px;
+    border-radius: 0;
+  }
+
   .how-works { padding: 40px 0 50px; }
   .how-works__head { margin-bottom: 20px; }
   .how-works__title { font-size: 24px; }
@@ -451,7 +462,7 @@ h1,h2,h3,h4,h5,h6 {
       
       <div class="price-display">
         <span class="label">Valor Total</span>
-        <span class="value" id="modalPrice">R$ 1.200,00</span>
+        <span class="value" id="modalPrice">R$ 1.097,00</span>
       </div>
 
       <div class="coupon-area">
@@ -478,7 +489,7 @@ h1,h2,h3,h4,h5,h6 {
       <p class="sub">Oferta exclusiva para membros do grupo <b>Quem Conecta Vende</b>.</p>
 
       <div class="price-row">
-        <div class="price-now"><span>VALOR</span><b>R$ 1.200,00</b></div>
+        <div class="price-now"><span>VALOR</span><b>R$ 1.097,00</b></div>
       </div>
       <div style="font-size:14px; color:var(--green); margin-top:-10px; margin-bottom:15px; font-weight:700">
         Aplique seu cupom para liberar o desconto
@@ -496,21 +507,21 @@ h1,h2,h3,h4,h5,h6 {
     <h4 class="carousel-title">PROJETOS ENTREGUES</h4>
     <div class="marquee-wrapper">
       <div class="marquee-track">
-        <a href="#" target="_blank" class="client-card"><span class="client-name">FEMAC Engenharia</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">NO TOPO 3ª Edição</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">SINDCAN Gestão</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Jornada Rica</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">HACK Suplementos</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Lipo Plus</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Grand Haus</span></a>
+        <a href="https://vortexoficial.github.io/FEMAC/pagina.html" target="_blank" class="client-card"><span class="client-name">FEMAC Engenharia</span></a>
+        <a href="https://rafaelsouzamentor.com.br/pagina.html" target="_blank" class="client-card"><span class="client-name">NO TOPO 3ª Edição</span></a>
+        <a href="https://vortexoficial.github.io/sindican/" target="_blank" class="client-card"><span class="client-name">SINDCAN Gestão</span></a>
+        <a href="https://vortexoficial.github.io/flaviana/" target="_blank" class="client-card"><span class="client-name">Jornada Rica</span></a>
+        <a href="https://lancamento.todehack.com.br/" target="_blank" class="client-card"><span class="client-name">HACK Suplementos</span></a>
+        <a href="https://lipoplusoficial.com/" target="_blank" class="client-card"><span class="client-name">Lipo Plus</span></a>
+        <a href="https://www.grandhaus.com.br/sobrenos.html" target="_blank" class="client-card"><span class="client-name">Grand Haus</span></a>
         
-        <a href="#" target="_blank" class="client-card"><span class="client-name">FEMAC Engenharia</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">NO TOPO 3ª Edição</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">SINDCAN Gestão</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Jornada Rica</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">HACK Suplementos</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Lipo Plus</span></a>
-        <a href="#" target="_blank" class="client-card"><span class="client-name">Grand Haus</span></a>
+        <a href="https://vortexoficial.github.io/FEMAC/pagina.html" target="_blank" class="client-card"><span class="client-name">FEMAC Engenharia</span></a>
+        <a href="https://rafaelsouzamentor.com.br/pagina.html" target="_blank" class="client-card"><span class="client-name">NO TOPO 3ª Edição</span></a>
+        <a href="https://vortexoficial.github.io/sindican/" target="_blank" class="client-card"><span class="client-name">SINDCAN Gestão</span></a>
+        <a href="https://vortexoficial.github.io/flaviana/" target="_blank" class="client-card"><span class="client-name">Jornada Rica</span></a>
+        <a href="https://lancamento.todehack.com.br/" target="_blank" class="client-card"><span class="client-name">HACK Suplementos</span></a>
+        <a href="https://lipoplusoficial.com/" target="_blank" class="client-card"><span class="client-name">Lipo Plus</span></a>
+        <a href="https://www.grandhaus.com.br/sobrenos.html" target="_blank" class="client-card"><span class="client-name">Grand Haus</span></a>
       </div>
     </div>
   </section>
@@ -566,7 +577,7 @@ h1,h2,h3,h4,h5,h6 {
       <span class="promo__badge">Oferta por tempo limitado</span>
       <p class="promo__lead">
         Essa condição especial é exclusiva para membros do grupo.
-        <br>Valor normal: <strong>R$ 1.200,00</strong>.
+        <br>Valor normal: <strong>R$ 1.2097,00</strong>.
       </p>
       <h3 class="promo__title">Aproveite o Desconto</h3>
       <p class="promo__sub">Clique abaixo e insira o cupom do grupo.</p>
@@ -646,7 +657,7 @@ h1,h2,h3,h4,h5,h6 {
   function openModal(){
     modal.classList.add('active');
     // Resetar campos ao abrir
-    priceDisplay.innerHTML = "R$ 1.200,00";
+    priceDisplay.innerHTML = "R$ 1.097,00";
     priceDisplay.querySelector('.value')?.classList.remove('discounted');
     couponInput.value = "";
     msgDisplay.innerHTML = "";
